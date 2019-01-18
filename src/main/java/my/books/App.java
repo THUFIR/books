@@ -15,10 +15,10 @@ public class App {
     private Properties properties = new Properties();
 
     public static void main(String[] args) throws Exception {
-        new App().init();
+        new App().htmlToXhtml();
     }
 
-    private void init() throws Exception {
+    private void htmlToXhtml() throws Exception {
         properties.loadFromXML(App.class.getResourceAsStream("/properties.xml"));
         LOG.info(properties.toString());
         URI inputURI = new URI(properties.getProperty("html_input"));
@@ -28,9 +28,9 @@ public class App {
         StreamSource streamSource = new StreamSource();
         streamSource.setInputStream(fileInputStream);
 
-        XMLReader xmlReader = new org.ccil.cowan.tagsoup.Parser();
+        XMLReader xmlReader = new org.ccil.cowan.tagsoup.Parser();  //but it's html, not xml...
 
-        Foo foo = JAXB.unmarshal(streamSource, Foo.class);
+        Foo foo = JAXB.unmarshal(streamSource, Foo.class);  //foo is ...?
     }
 
 }
