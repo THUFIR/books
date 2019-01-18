@@ -28,6 +28,10 @@ dependencies {
 
     compile (group = "org.ccil.cowan.tagsoup"  , name = "tagsoup"     , version = "1.2.1")
     compile (group = "net.sf.saxon"            , name = "Saxon-HE"    , version = "9.9.0-2")
+    compile (group = "xom"                     , name = "xom"         , version = "1.2.5")
+
+
+
   //  compile (group = "xalan"                   , name = "xalan"       , version = "2.7.2")
  //   compile (group = "xerces"                  , name = "xercesImpl"  , version = "2.12.0")
   //  compile (group = "org.basex"               , name = "basex"       , version = "9.1.1")
