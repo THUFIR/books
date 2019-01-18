@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="MLIspec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="typename"/>
+        <xs:element ref="description"/>
+        <xs:element ref="element"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="typename" type="xs:NMTOKEN"/>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="element">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="name"/>
+        <xs:element ref="type"/>
+        <xs:element ref="required"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="xs:NCName"/>
+  <xs:element name="type" type="xs:NCName"/>
+  <xs:element name="required" type="xs:boolean"/>
+  <xs:element name="id" type="xs:NMTOKEN"/>
+</xs:schema>

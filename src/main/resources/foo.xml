@@ -1,0 +1,12 @@
+<MLIspec> 
+<id>4050response</id> 
+<typename>4050Response</typename> 
+<description>Show the Contract Numbers</description>    
+<element> 
+<id>7504</id> 
+<name>SourceAccountIdentifier</name> 
+<type>table</type> 
+<required>true</required>       
+</element>
+</MLIspec>
+

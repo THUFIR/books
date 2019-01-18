@@ -1,0 +1,8 @@
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>jaxb</comment>
+    <entry key="basex_path">file:/home/thufir/.basex/</entry>
+    <entry key="output">file:/home/thufir/xml/output.xml</entry>
+    <entry key="html_input">file:/home/thufir/xml/wget/index.html</entry>
+</properties>
+
