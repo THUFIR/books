@@ -41,7 +41,7 @@ dependencies {
 
 application {
     // Define the main class for the application
-    mainClassName = "books.App"
+    mainClassName = "my.books.App"
 }
 
 val test by tasks.getting(Test::class) {

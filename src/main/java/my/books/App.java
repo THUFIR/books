@@ -1,4 +1,4 @@
-package books;
+package my.books;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.logging.Logger;
 import javax.xml.bind.JAXB;
 import javax.xml.transform.stream.StreamSource;
+import org.xml.sax.XMLReader;
 
 public class App {
 
@@ -26,7 +27,10 @@ public class App {
         FileInputStream fileInputStream = new FileInputStream(htmlInputFile);
         StreamSource streamSource = new StreamSource();
         streamSource.setInputStream(fileInputStream);
-    //    Foo foo = JAXB.unmarshal(streamSource, Foo.class);
+
+        XMLReader xmlReader = new org.ccil.cowan.tagsoup.Parser();
+
+        Foo foo = JAXB.unmarshal(streamSource, Foo.class);
     }
 
 }
