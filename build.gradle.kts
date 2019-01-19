@@ -29,6 +29,8 @@ dependencies {
     compile (group = "org.ccil.cowan.tagsoup"  , name = "tagsoup"     , version = "1.2.1")
     compile (group = "net.sf.saxon"            , name = "Saxon-HE"    , version = "9.9.0-2")
     compile (group = "xom"                     , name = "xom"         , version = "1.2.5")
+    compile (group = "org.jsoup"               , name = "jsoup"       , version = "1.11.3")
+
 
 
 
