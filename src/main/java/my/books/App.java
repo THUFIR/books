@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class App {
 
@@ -14,19 +15,27 @@ public class App {
     private Properties properties = new Properties();
 
     public static void main(String[] args) throws Exception {
-        new App().driver();
+        new App().basicJSoup();
     }
 
-    private void driver() throws Exception {
+    private void basicJSoup() throws Exception {
         properties.loadFromXML(App.class.getResourceAsStream("/properties.xml"));
-        LOG.info(properties.toString());
+        LOG.fine(properties.toString());
         URI inputURI = new URI(properties.getProperty("html_input"));
         URI outputURI = new URI(properties.getProperty("output"));
 
         File input = new File(inputURI);
         Document doc = Jsoup.parse(input, "UTF-8");
-        Element masthead = doc.select("div.side_categories").first();
-        LOG.info(masthead.outerHtml());
+        Element sideCategories = doc.select("div.side_categories").first();
+        LOG.fine(sideCategories.outerHtml());
+
+        Elements ul = doc.select("div.side_categories > ul");
+        Elements li = ul.select("li");
+
+        for (int i = 0; i < li.size(); i++) {
+            LOG.info(li.get(i).outerHtml());
+            LOG.fine("i\t\t" + i);
+        }
     }
 
 }
