@@ -26,16 +26,22 @@ public class App {
 
         File input = new File(inputURI);
         Document doc = Jsoup.parse(input, "UTF-8");
-        Element sideCategories = doc.select("div.side_categories").first();
-        LOG.fine(sideCategories.outerHtml());
+        Elements sideCategory = doc.select("div.side_categories");
 
-        Elements ul = doc.select("div.side_categories > ul");
-        Elements li = ul.select("li");
-
-        for (int i = 0; i < li.size(); i++) {
-            LOG.info(li.get(i).outerHtml());
-            LOG.fine("i\t\t" + i);
-        }
+      //  Elements links = doc.select("div.side_categories ul li a");
+        traverseElements(sideCategory);
     }
 
+    private void traverseElements(Elements elements) {
+        Element element;
+        for (int i = 0; i < elements.size(); i++) {
+            element = elements.get(i);
+            iterate(element);
+        }       
+    }
+
+    private void iterate(Element element) {
+        Elements elements = element.getAllElements();
+        traverseElements(elements);
+    }
 }
